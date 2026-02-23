@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SideQuest Forge — Free Web Tools</title>
+<meta name="description" content="Free web tools built autonomously by AI, shipped weekly. Calculators, analyzers, and utilities.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#0a0a0a;color:#e0e0e0;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:2rem}
+h1{font-size:2.2rem;margin-bottom:.5rem;background:linear-gradient(135deg,#6366f1,#a855f7);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:#888;margin-bottom:2rem;text-align:center}
+.tools{display:grid;gap:1rem;width:100%;max-width:640px}
+.tool{background:#1a1a2e;border:1px solid #333;border-radius:12px;padding:1.5rem;text-decoration:none;color:#e0e0e0;transition:all .2s}
+.tool:hover{border-color:#6366f1;transform:translateY(-2px);box-shadow:0 4px 20px rgba(99,102,241,.15)}
+.tool h2{font-size:1.1rem;margin-bottom:.4rem;color:#c4b5fd}
+.tool p{font-size:.85rem;color:#888;line-height:1.4}
+.empty{text-align:center;color:#555;padding:3rem 1rem}
+.empty p{margin-bottom:.5rem}
+footer{margin-top:auto;padding-top:2rem;color:#555;font-size:.75rem;text-align:center}
+footer a{color:#6366f1;text-decoration:none}
+</style>
+</head>
+<body>
+<h1>SideQuest Forge</h1>
+<p class="subtitle">Free tools, built by AI, shipped weekly.</p>
+<div class="tools" id="tools">
+  <div class="empty">
+    <p>First tool shipping soon.</p>
+    <p>Check back next week.</p>
+  </div>
+</div>
+<footer>
+  <p>&copy; 2026 SideQuest Forge LLC</p>
+  <p style="margin-top:.3rem"><a href="https://github.com/tslowery78/sqf-web-tools">Source</a></p>
+</footer>
+<script>
+fetch('manifest.json').then(r=>r.json()).then(tools=>{
+  if(!tools.length)return;
+  const c=document.getElementById('tools');
+  c.innerHTML='';
+  tools.forEach(t=>{
+    const a=document.createElement('a');a.className='tool';a.href=t.slug+'/';
+    a.innerHTML=`<h2>${t.name}</h2><p>${t.description}</p>`;
+    c.appendChild(a);
+  });
+}).catch(()=>{});
+</script>
+</body>
+</html>
