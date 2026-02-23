@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "slug": "2026-02-23_debt-payoff-planner",
+    "name": "Debt Payoff Planner",
+    "description": "Mobile-friendly avalanche vs snowball debt calculator with payoff schedule and interest savings comparison.",
+    "deployed": "2026-02-23T09:17:27Z"
+  }
+]
