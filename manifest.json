@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "slug": "sprint-test",
+    "name": "Deploy Test",
+    "description": "Verifying the sprint deployment pipeline works end-to-end.",
+    "deployed": "2026-02-23T01:33:35Z"
+  }
+]
